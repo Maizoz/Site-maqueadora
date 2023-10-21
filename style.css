@@ -1,6 +1,6 @@
 :root{
     --header-color: #141414;
-    --gol-color:#daa520;
+    --gold-color:#daa520;
     --silver-color-:#c0c0c0;
     --background-color:#e1e6d6;
     --black-color:#f1f5e7;
@@ -10,6 +10,8 @@
    img {
     border-radius: 50%;
     width: 25%;
+    position: relative;
+    left: 6rem;
 
    }
   /* Header */ 
@@ -26,11 +28,17 @@
     right: 0;
     z-index: 1000; 
   }
-  
+  .marca{
+    display: flex;
+    margin-top: 0.7rem;    
+  }
   .header-bar h1 {
     font-size: 24px;
     margin: 0;
     color: var(--silver-color-);
+    display: flex;
+    align-self: center;
+    padding-left: 2rem;
   }
   
   .header-bar nav {
@@ -62,10 +70,19 @@
       text-align: center;
     }
   
-    .header-bar h1 {
+    .header-bar h1 {     
+      flex-direction: column;
+      text-align: center;     
       font-size: 18px;
       margin-bottom: 10px;
     }
+    .marca {
+      display: flex;
+      margin-left:3.9rem;
+      margin-top: 1rem;
+
+    }
+   
   
     .header-bar nav ul {
       flex-direction: column;
@@ -74,6 +91,22 @@
     .header-bar nav li {
       margin: 5px 0;
     }
+    .card .social-link1, .card .social-link2 {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      left: 5rem;
+    }
+    img{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-right: 4.5rem;
+
+    }
+
   }
   /* body */
 body {
@@ -102,7 +135,7 @@ body {
   cursor: pointer;
 }
 
-.card .social-link1,.card .social-link2,.card .social-link3,.card .social-link4 {
+.card .social-link1,.card .social-link2 {
   position: relative;
   display: flex;
   align-items: center;
@@ -150,4 +183,28 @@ body {
     transform: scale(1);
   }
 }
+
+/* cards body */
+.price {
+  position: absolute;
+  top: 20rem;
+  left: 10rem;
+  width: 190px;
+  height: 254px;
+  border-radius: 50px;
+  background: var(--header-color);
+  box-shadow: 20px 20px 60px var(--gold-color),
+                -20px -20px 60px var(--gold-color);
   
+                
+                
+ }
+ h3 {
+  color: var(--gold-color);
+  position: absolute;
+  top: 50%; /* Ajuste este valor para centralizar verticalmente */
+  left: 50%; /* Ajuste este valor para centralizar horizontalmente */
+  transform: translate(-50%, -50%);
+  list-style: none;
+  
+}
