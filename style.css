@@ -106,12 +106,27 @@
       margin-right: 4.5rem;
 
     }
-    .myCard{
-     position: absolute;
-     top: 20%;
-     left: 8.9%;
+    .myCard,.myCard2{
+      align-items: center;
+      text-align: center;
+      position: relative;
     }
+    .mycard{
+      
+      float: none;
+      top: 5rem;
+      right: 12rem;
+      
+    }
+    .myCard2{
+      float: none;
+      top: 5rem;
+      right: 12rem;
+    }
+
+      
    
+  
   }
   
   /* body */
@@ -191,13 +206,34 @@ body {
 }
 
 /* cards body */
-.myCard {
+.myCard, .myCard2 {
   background-color: transparent;
   width: 190px;
   height: 254px;
   perspective: 1000px;
-  margin-top: 40%;
-  margin-left: 20%;
+  margin-top: 0;
+}
+
+.myCard {
+  position: relative;
+  float: left;
+  margin-left: 300px; 
+}
+
+.myCard2 {
+  position: relative;
+  float: left; 
+  margin-left: 400px; 
+}
+
+.myCard2.active .innerCard {
+  transform: rotateY(180deg);
+}
+.contenedor {
+  position: relative;
+  width: 100%; 
+  height: 630px; 
+  margin-top: 250px;
 }
 
 .title {
@@ -205,6 +241,13 @@ body {
   font-weight: 900;
   text-align: center;
   margin: 0;
+}
+.title2 {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  word-spacing: 2px;
 }
 
 .innerCard {
@@ -284,7 +327,9 @@ body {
 
 /* animation buttons */
 .button,
-.button1{
+.button1,
+.button2,
+.button3{
   cursor: pointer;
 }
 .button1{
@@ -292,7 +337,9 @@ body {
   margin-top: 3rem;
 }
 .button,
-.button1 {
+.button1,
+.button2,
+.button3 {
   position: relative;
   padding: 10px 22px;
   border-radius: 6px;
@@ -304,14 +351,20 @@ body {
 }
 
 .button:active,
-.button1:active {
+.button1:active,
+.button2:active,
+.button3:active  {
   transform: scale(0.96);
 }
 
 .button:before,
 .button:after,
 .button1:before,
-.button1:after {
+.button1:after,
+.button2:before,
+.button2:after,
+.button3:before,
+.button3:after {
   position: absolute;
   content: "";
   width: 150%;
@@ -323,7 +376,9 @@ body {
 }
 
 .button:hover:before,
-.button1:hover:before{
+.button1:hover:before,
+.button2:hover:before
+.button3:hover:before{
   top: -70%;
   background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
     radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
@@ -360,7 +415,9 @@ body {
 }
 
 .button:hover::after,
-.button1:hover::after  {
+.button1:hover::after,
+.button2:hover::after,
+.button3:hover::after  {
   bottom: -70%;
   background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
     radial-gradient(circle, #7d2ae8 20%, transparent 20%),
@@ -374,6 +431,10 @@ body {
   animation: greenbottomBubbles 0.6s ease;
 }
 
+.button3 {
+  position: relative;
+  top: 1rem;
+}
 @keyframes greenbottomBubbles {
   0% {
     background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
@@ -393,13 +454,15 @@ body {
 }
 
 /* lists */
-.ul1 {
+.ul1,
+.ul2 {
   position: absolute;
   padding: 0;
   list-style: none;
 }
 
-.l1 {
+.l1,
+.l2 {
   margin-bottom: 20px; 
   max-height: 2em; 
   overflow: hidden; 
